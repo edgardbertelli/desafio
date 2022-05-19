@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Contracts\BookContract;
 use App\Contracts\CourseContract;
+use App\Repositories\BookRepository;
 use App\Repositories\CourseRepository;
 use Illuminate\Support\ServiceProvider;
 
@@ -26,5 +28,7 @@ class RepositoriesProvider extends ServiceProvider
     public function boot()
     {
         $this->app->bind(CourseContract::class, CourseRepository::class);
+        $this->app->bind(BookContract::class, BookRepository::class);
+
     }
 }
